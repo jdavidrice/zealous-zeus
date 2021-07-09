@@ -1,0 +1,41 @@
+{
+  "name": "zealous-zues-backend",
+  "version": "0.1.0",
+  "description": "The backend of a FREE video upload and sharing website that allows its users to upload video files up to 15GB in size, with an unlimited amount of storage space for each user.",
+  "main": "backend/index.js",
+  "scripts": {
+    "format": "prettier {,*/**/}*.{js,jsx,ts,tsx,json} --write",
+    "start:dev:server": "nodemon backend/index.js",
+    "start:dev:client": "npm start --prefix client",
+    "start:dev:watch": "concurrently \"npm run start:dev:server\" \"npm run start:dev:client\"",
+    "test": "echo \"Warning: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidsaulrodriguez/zealous-zues.git"
+  },
+  "author": "David Saul Rodriguez II <david@bsdadm.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/davidsaulrodriguez/zealous-zues/issues"
+  },
+  "homepage": "https://github.com/davidsaulrodriguez/zealous-zues#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

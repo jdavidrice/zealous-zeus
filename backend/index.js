@@ -1,12 +1,26 @@
 require('dotenv').config();
 const express = require('express');
+const session = require('express-session');
 const server = express();
 const mongoose = require('mongoose');
+const passport = require('passport');
+const helmet = require('helmet');
 const routes = require('./routes');
+const secret = process.env.SESSION_SECRET;
 
 server.use(express.urlencoded({ extended: true }));
+server.use(helmet());
 server.use(express.json());
 server.use(express.static(__dirname));
+server.use(
+  session({
+    secret,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+server.use(passport.initialize());
+server.use(passport.session());
 server.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
